@@ -4,12 +4,19 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+    commands:
+      - echo Installing dependencies...
   build:
     commands:
+      - echo Compiling Java app...
       - mkdir -p output
       - javac WebServer.java -d output
+  post_build:
+    commands:
+      - echo Build completed successfully.
+
 artifacts:
   files:
-    - output/**
+    - output/**                 # Compiled Java .class files
     - appspec.yml
-    - scripts/**
+    - scripts/**                # Deployment shell scripts
