@@ -1,4 +1,4 @@
-FROM openjdk:11
+FROM public.ecr.aws/amazoncorretto/amazoncorretto:11
 
 COPY WebServer.java /app/
 
