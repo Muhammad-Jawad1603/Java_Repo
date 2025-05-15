@@ -6,11 +6,11 @@ import java.net.InetSocketAddress;
 
 public class WebServer {
     public static void main(String[] args) throws Exception {
-        HttpServer server = HttpServer.create(new InetSocketAddress(80), 0);
+        HttpServer server = HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/", new HelloHandler());
         server.setExecutor(null); // creates a default executor
         server.start();
-        System.out.println("Server started at http://localhost:80/");
+        System.out.println("Server started at http://localhost:8080/");
     }
 
     static class HelloHandler implements HttpHandler {
