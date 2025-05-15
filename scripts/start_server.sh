@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/ubuntu/java-hello/output
-sudo nohup java WebServer > ../server.log 2>&1 &
+cd /home/ubuntu/docker-app
+sudo docker run -d -p 80:8080 --name java-hello java-hello
