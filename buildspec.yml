@@ -5,18 +5,21 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 099199746132.dkr.ecr.eu-west-1.amazonaws.com
+
   build:
     commands:
       - echo Building Docker image...
       - docker build -t java-hello .
       - docker tag java-hello:latest 099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo:latest
+
   post_build:
-  commands:
-    - echo Pushing Docker image to ECR...
-    - docker push 099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo
-    - echo Writing imagedefinitions.json...
-    - printf '[{"name":"your-container-name","imageUri":"099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo:latest"}]' > imagedefinitions.json
-  artifacts:
+    commands:
+      - echo Pushing Docker image to ECR...
+      - docker push 099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo
+      - echo Writing imagedefinitions.json...
+      - printf '[{"name":"your-container-name","imageUri":"099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo:latest"}]' > imagedefinitions.json
+
+artifacts:
   files:
     - imagedefinitions.json
 
