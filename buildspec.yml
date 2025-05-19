@@ -17,8 +17,7 @@ post_build:
     - echo Pushing Docker image to ECR...
     - docker push 099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo
     - echo Writing imagedefinitions.json...
-    - printf '[{"name":"java-hello","imageUri":"099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo:latest"}]' > imagedefinitions.json
-
+    - printf '[{"name":"java-hello","imageUri":"099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo:latest"}]' > ./imagedefinitions.json
 
 artifacts:
   files:
