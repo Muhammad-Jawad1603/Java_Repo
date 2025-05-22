@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /home/ec2-user/java-hello
+cd /home/ubuntu/java-hello
 docker-compose down || true

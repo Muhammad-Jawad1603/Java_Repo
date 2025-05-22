@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/java-hello
+    destination: /home/ubuntu/java-hello
 hooks:
   BeforeInstall:
     - location: scripts/stop.sh
