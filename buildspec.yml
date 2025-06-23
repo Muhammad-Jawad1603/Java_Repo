@@ -8,8 +8,8 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - docker build -t java-hello .
-      - docker tag java-repo:latest 099199746132.dkr.ecr.eu-west-1.amazonaws.com/java-repo:latest
+      - docker build -t java .
+      - docker tag java:latest 099199746132.dkr.ecr.eu-west-1.amazonaws.com/java-repo:latest
   post_build:
     commands:
       - echo Pushing Docker image to ECR...
