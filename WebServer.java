@@ -16,7 +16,7 @@ public class WebServer {
     static class HelloHandler implements HttpHandler {
         public void handle(HttpExchange t) {
             try {
-                String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!! Java";
+                String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!! Java!";
                 t.sendResponseHeaders(200, response.length());
                 OutputStream os = t.getResponseBody();
                 os.write(response.getBytes());
