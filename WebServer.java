@@ -10,14 +10,13 @@ public class WebServer {
         server.createContext("/", new HelloHandler());
         server.setExecutor(null); // creates a default executor
         server.start();
-        System.out.println("Server started at http://0.0.0.0:8080/");
+        System.out.println("Server started at http://localhost:8080/");
     }
 
     static class HelloHandler implements HttpHandler {
         public void handle(HttpExchange t) {
             try {
-                String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Java";
-                t.getResponseHeaders().set("Content-Type", "text/plain");
+                String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!!";
                 t.sendResponseHeaders(200, response.length());
                 OutputStream os = t.getResponseBody();
                 os.write(response.getBytes());
@@ -28,3 +27,8 @@ public class WebServer {
         }
     }
 }
+
+
+
+
+
