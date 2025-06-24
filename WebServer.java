@@ -1,4 +1,4 @@
-import com.sun.net.httpserver.HttpServer;More actions
+import com.sun.net.httpserver.HttpServer;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.OutputStream;
@@ -10,13 +10,14 @@ public class WebServer {
         server.createContext("/", new HelloHandler());
         server.setExecutor(null); // creates a default executor
         server.start();
-        System.out.println("Server started at http://localhost:8080/");
+        System.out.println("Server started at http://0.0.0.0:8080/");
     }
 
     static class HelloHandler implements HttpHandler {
         public void handle(HttpExchange t) {
             try {
                 String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Java";
+                t.getResponseHeaders().set("Content-Type", "text/plain");
                 t.sendResponseHeaders(200, response.length());
                 OutputStream os = t.getResponseBody();
                 os.write(response.getBytes());
