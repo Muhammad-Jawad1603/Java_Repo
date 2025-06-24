@@ -1,4 +1,4 @@
-import com.sun.net.httpserver.HttpServer;
+import com.sun.net.httpserver.HttpServer;More actions
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.OutputStream;
@@ -16,9 +16,7 @@ public class WebServer {
     static class HelloHandler implements HttpHandler {
         public void handle(HttpExchange t) {
             try {
-                String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!! Java!";
-                // ✅ Add content-type header
-                t.getResponseHeaders().set("Content-Type", "text/plain");
+                String response = "Hello, World from ECS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Java";
                 t.sendResponseHeaders(200, response.length());
                 OutputStream os = t.getResponseBody();
                 os.write(response.getBytes());
