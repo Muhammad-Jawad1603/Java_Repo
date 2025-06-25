@@ -15,7 +15,7 @@ phases:
       - echo Pushing Docker image to ECR...
       - docker push 099199746132.dkr.ecr.eu-west-1.amazonaws.com/java-repo:latest
       - echo Writing imagedefinitions.json...
-      - printf '[{"name":"java","imageUri":"099199746132.dkr.ecr.eu-west-1.amazonaws.com/demo-repo:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"java","imageUri":"099199746132.dkr.ecr.eu-west-1.amazonaws.com/java-repo:latest"}]' > imagedefinitions.json
 
 artifacts:
   files:
